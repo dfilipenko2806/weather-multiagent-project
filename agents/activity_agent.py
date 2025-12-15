@@ -1,13 +1,9 @@
-from agents.gpt_agent import ask_gpt
-from agents.utils import parse_numbered_list
+from services.llm_client import ask_llm
 
-def suggest_activity(weather_text: str):
+def get_activity(weather_desc: str, city: str) -> str:
     prompt = (
-        f"The weather is {weather_text}. "
-        "Suggest exactly 3-5 suitable evening activities. "
-        "Each activity must be ONE short sentence. "
-        "Respond ONLY as a numbered list (1., 2., 3., ...), one item per line, no extra text."
+        f"You are a personal assistant. User is in {city}. "
+        f"Weather: {weather_desc}. "
+        "Suggest 3 evening activities in a short list."
     )
-    response = ask_gpt(prompt)
-    activities = parse_numbered_list(response)
-    return activities
+    return ask_llm(prompt)

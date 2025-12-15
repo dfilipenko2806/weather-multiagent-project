@@ -1,27 +1,34 @@
-from orchestrator import run
+from services.weather_api import get_weather
+from agents.activity_agent import get_activity
+from agents.food_agent import get_food
+from agents.location_agent import get_location
+from agents.outfit_agent import get_outfit
 
-city = input("Enter your city: ")
-food_preferences = input("Any food preferences? (e.g., dislike tomatoes): ")
+def main():
+    city = input("Enter your city: ").strip()
+    preferences = input("Any food preferences? (e.g., dislike tomatoes): ").strip()
 
-print("\nPlanning your evening...\n")
+    print("\nPlanning your evening...\n")
 
-result = run(city, food_preferences)
+    weather_desc = get_weather(city)
+    print("=== WEATHER ===")
+    print(weather_desc)
 
-print("=== WEATHER ===")
-print(result["weather"])
+    activity = get_activity(weather_desc, city)
+    print("\n=== ACTIVITY ===")
+    print(activity)
 
-print("\n=== ACTIVITY ===")
-for i, act in enumerate(result["activity"], 1):
-    print(f"{i}. {act}")
+    food = get_food(activity, preferences, city)
+    print("\n=== FOOD ===")
+    print(food)
 
-print("\n=== FOOD ===")
-for i, f in enumerate(result["food"], 1):
-    print(f"{i}. {f}")
+    location = get_location(activity, city)
+    print("\n=== LOCATION ===")
+    print(location)
 
-print("\n=== LOCATION ===")
-for i, loc in enumerate(result["location"], 1):
-    print(f"{i}. {loc}")
+    outfit = get_outfit(activity, weather_desc)
+    print("\n=== OUTFIT ===")
+    print(outfit)
 
-print("\n=== OUTFIT ===")
-for i, item in enumerate(result["outfit"], 1):
-    print(f"{i}. {item}")
+if __name__ == "__main__":
+    main()

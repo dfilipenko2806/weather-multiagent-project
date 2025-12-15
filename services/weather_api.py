@@ -1,7 +1,7 @@
 import requests
 from config import OPENWEATHER_API_KEY
 
-def get_weather(city: str):
+def get_weather(city: str) -> str:
     url = "https://api.openweathermap.org/data/2.5/weather"
     params = {
         "q": city,
@@ -12,4 +12,9 @@ def get_weather(city: str):
 
     response = requests.get(url, params=params)
     response.raise_for_status()
-    return response.json()
+    data = response.json()
+
+    temp = data["main"]["temp"]
+    description = data["weather"][0]["description"]
+
+    return f"{temp}°C, {description}"
