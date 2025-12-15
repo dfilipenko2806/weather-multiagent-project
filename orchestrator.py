@@ -1,21 +1,33 @@
-from agents.weather_agent import get_summary
-from agents.activity_agent import suggest as activity_suggest
-from agents.food_agent import suggest as food_suggest
-from agents.location_agent import suggest as location_suggest
-from agents.outfit_agent import suggest as outfit_suggest
+from agents.weather_agent import get_weather
+from agents.activity_agent import suggest_activity
+from agents.food_agent import suggest_food
+from agents.location_agent import suggest_location
+from agents.outfit_agent import suggest_outfit
 
-def run(city, preferences):
-    weather = get_summary(city)
+def run(city: str, food_preferences: str):
+    """
+    Пошаговое построение вечернего плана.
+    """
+    result = {}
 
-    activity = activity_suggest(weather)
-    food = food_suggest(activity, preferences)
-    location = location_suggest(city, activity)
-    outfit = outfit_suggest(weather, activity)
+    # 1. Погода
+    weather_text = get_weather(city)
+    result["weather"] = weather_text
 
-    return {
-        "weather": weather,
-        "activity": activity,
-        "food": food,
-        "location": location,
-        "outfit": outfit
-    }
+    # 2. Вечерние активности
+    activities = suggest_activity(weather_text)
+    result["activity"] = activities
+
+    # 3. Еда/закуски
+    foods = suggest_food(food_preferences)
+    result["food"] = foods
+
+    # 4. Локации
+    locations = suggest_location(activities, city)
+    result["location"] = locations
+
+    # 5. Одежда
+    outfit = suggest_outfit(activities, weather_text)
+    result["outfit"] = outfit
+
+    return result

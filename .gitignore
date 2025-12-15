@@ -1,4 +1,7 @@
+venv/
 __pycache__/
 *.pyc
 .env
 config.py
+models/
+curl
