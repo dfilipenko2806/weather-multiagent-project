@@ -10,7 +10,7 @@ def main():
 
     print("\nPlanning your evening...\n")
 
-    weather_desc = get_weather(city)gyjg7yj
+    weather_desc = get_weather(city)
     print("=== WEATHER ===")
     print(weather_desc)
 
