@@ -8,7 +8,7 @@ def main():
     city = input("Enter your city: ").strip()
     preferences = input("Any food preferences? (e.g., dislike tomatoes): ").strip()
 
-    print("\nPlanning your evening...\gtyjtyjn")
+    print("\nPlanning your evening...\n")
 
     weather_desc = get_weather(city)gyjg7yj
     print("=== WEATHER ===")
