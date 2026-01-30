@@ -3,6 +3,7 @@ from agents.activity_agent import get_activity
 from agents.food_agent import get_food
 from agents.location_agent import get_location
 from agents.outfit_agent import get_outfit
+
 def main():
     city = input("Enter your city: ").strip()
     preferences = input("Any food preferences? (e.g., dislike tomatoes): ").strip()
