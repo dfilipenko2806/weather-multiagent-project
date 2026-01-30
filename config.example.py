@@ -1,3 +1,2 @@
 Base Top !1OPENWEATHER_API_KEY = "YOUR_API_KEY_HERE"
 LLM_MODEL = "gpt-4o-mini"rtyhr
-hikh
