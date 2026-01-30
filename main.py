@@ -1,4 +1,4 @@
-main.py Base1from services.weather_api import get_weather
+from services.weather_api import get_weather
 from agents.activity_agent import get_activity
 from agents.food_agent import get_food
 from agents.location_agent import get_location
