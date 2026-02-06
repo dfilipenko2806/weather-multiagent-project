@@ -11,3 +11,4 @@ def get_activity(weather_desc: str, city: str) -> str:
 78k78k
 yuuujyuj6yku8j
 yul76ik6
+public main
