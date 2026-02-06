@@ -11,7 +11,7 @@ def main():
     print("\nPlanning your evening...\n")
 
     weather_desc = get_weather(city)
-    print("=== WEATHER ===")
+    print("=== WEATHER ===")yfujyf
     print(weather_desc)
 
     activity = get_activity(weather_desc, city)
