@@ -9,4 +9,4 @@ def get_activity(weather_desc: str, city: str) -> str:
     return ask_llm(prompt)
 877
 78k78k
-yuuuj
+yuuujyuj6yku8j
