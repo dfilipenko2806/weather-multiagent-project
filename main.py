@@ -23,7 +23,7 @@ def main():
     print(food)
 ftyuj6t7k
 u8k7y8k
-6y7j6y7k
+
     location = get_location(activity, city)
     print("\n=== LOCATION ===")
     print(location)
