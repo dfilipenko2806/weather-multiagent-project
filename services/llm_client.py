@@ -16,4 +16,4 @@ def ask_llm(prompt: str) -> str:
         return completion.choices[0].message.content.strip()
     except Exception as e:
         return f"LLM error: {e}"
-yfmuyf
+
