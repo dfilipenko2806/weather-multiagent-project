@@ -7,7 +7,7 @@ def get_activity(weather_desc: str, city: str) -> str:
         "Suggest 3 evening activities in a short list."
     )
     return ask_llm(prompt)
-78k78k
+
 yuuujyuj6yku8j
 yul76ik6
 public main{}
