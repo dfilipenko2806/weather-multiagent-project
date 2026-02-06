@@ -23,7 +23,6 @@ def main():
     print(food)
 
 
-
     location = get_location(activity, city)
     print("\n=== LOCATION ===")
     print(location)
