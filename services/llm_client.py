@@ -1,6 +1,8 @@
 from groq import Groq
 from config import GROQ_API_KEY
-tyujtyujf
+tyujtyujff
+
+
 client = Groq(api_key=GROQ_API_KEY)
 
 def ask_llm(prompt: str) -> str:
