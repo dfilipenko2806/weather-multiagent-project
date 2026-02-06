@@ -21,7 +21,7 @@ def main():
     food = get_food(activity, preferences, city)
     print("\n=== FOOD ===")
     print(food)
-ftyuj6t7k
+
 
 
     location = get_location(activity, city)
