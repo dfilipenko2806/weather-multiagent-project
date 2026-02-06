@@ -17,4 +17,3 @@ def ask_llm(prompt: str) -> str:
     except Exception as e:
         return f"LLM error: {e}"
 yfmuyf
-y8uky8ktiktuk
